@@ -1,0 +1,216 @@
+/* Profile container and card styling */
+.profile-container {
+  display: flex;
+  align-items: flex-start;
+  margin-left: 310px;
+  /* Adjust to account for the sidebar and breadcrumb */
+  padding-top: 20px;
+  /* Add padding to give space from the top */
+}
+
+
+
+.col-xl-4,
+.col-xl-8 {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Soften shadow to avoid hard lines */
+  background-color: #fff;
+  padding: 15px;
+  border: none;
+}
+
+.col-xl-4 {
+  margin-right: 20px;
+  /* Space between columns */
+  width: 30%;
+  /* Adjust width */
+}
+
+.col-xl-8 {
+  width: 65%;
+}
+
+/* Profile card styling */
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.6);
+  /* White shadow without border */
+  padding: 15px;
+  margin-bottom: 20px;
+  /* Add margin to create gap */
+  border: none;
+  /* Ensure no border is applied */
+}
+
+.profile-card img {
+  border-radius: 50%;
+  max-width: 120px;
+  height: 120px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Slight shadow for image */
+}
+
+
+/* Profile card text styling */
+.profile-card h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2c384e;
+  margin: 10px 0 0 0;
+}
+
+.profile-card h3 {
+  font-size: 18px;
+  color: #666;
+  margin: 5px 0 0 0;
+}
+
+/* Tabs styling */
+.nav-tabs {
+  border-bottom: 1px solid transparent;
+  /* Initial border to ensure spacing */
+  margin-bottom: 30px;
+  /* Space for the horizontal line */
+  padding-bottom: 10px;
+  /* Space between tabs and line */
+}
+
+.nav-tabs .nav-link {
+  color: #000;
+  font-weight: normal;
+  border: none;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-tabs .nav-link:hover {
+  color: #007bff;
+  /* Blue text color on hover */
+}
+
+.nav-tabs .nav-link.active {
+  color: #007bff;
+  /* Blue text color when active */
+}
+
+.nav-tabs .nav-link.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background-color: #007bff;
+}
+
+
+.tab-content {
+  margin-top: 20px;
+}
+
+/* Tab pane content */
+.tab-pane .row {
+  margin-bottom: 20px;
+  /* Gap between rows */
+  font-size: 15px;
+}
+
+.tab-pane .col-md-4.label {
+  font-weight: 600;
+  color: rgba(1, 41, 112, 0.6);
+  /* Adjusted color */
+}
+
+.tab-pane .col-md-8 {
+  color: #333;
+  /* Darker color for values */
+}
+
+/* Heading styles */
+.card-title {
+  color: #012970;
+  /* Radiant blue for headings */
+  font-family: 'Arial', sans-serif;
+  /* Change font */
+  margin-top: 30px;
+  margin-bottom: 20px;
+  /* Adjust margin for spacing */
+}
+
+.card-title.student-details,
+.card-title.parent-details,
+.card-title.address {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+/* Form and button styling */
+.form-control {
+  border-radius: 0.25rem;
+  font-family: 'Arial', sans-serif;
+  /* Change font */
+}
+
+.text-center {
+  margin-top: 20px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
+/* Adjust margins for form fields */
+.row.mb-3 {
+  margin-bottom: 15px;
+}
+
+.col-form-label {
+  color: #333;
+  /* Dark color for labels */
+  font-family: 'Arial', sans-serif;
+  /* Change font */
+}
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .profile-container {
+    display:block;
+    max-width: 100%; /* Utilize full screen width */
+    margin: 20px auto; /* Center the container and add vertical spacing */
+    position: absolute; /* Keep it within its parent container */
+    left: 0; /* Remove left offset */
+    padding: 10px; /* Maintain padding for spacing */
+    box-shadow: none; /* Cleaner look on mobile */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+
+  .col-xl-4,
+  .col-xl-8 {
+    width: 100%; /* Stack columns vertically */
+    margin-right: 0;
+    margin-bottom: 20px; /* Add spacing between stacked elements */
+  }
+
+  .profile-card {
+    display: block;
+    text-align: center; /* Center content for smaller screens */
+    margin-bottom: 20px; /* Add gap between cards */
+  }
+
+  .profile-card img {
+    max-width: 100px; /* Reduce image size */
+    height: auto;
+    margin-bottom: 15px;
+  }
+
+  .btn-primary {
+    width: 100%; /* Make buttons responsive */
+  }
+}

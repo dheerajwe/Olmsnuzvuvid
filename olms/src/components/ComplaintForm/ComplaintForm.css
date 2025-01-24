@@ -1,0 +1,47 @@
+.main-form {
+  max-width: 500px; /* Max width for desktop */
+  margin: 20px auto; /* Center the form with margin on top and bottom */
+  padding: 20px; /* Standard padding */
+  background-color: #ffffff; /* White background */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Label styles */
+.form-label {
+  font-weight: bold; /* Bold text */
+}
+
+/* Margin for form controls and buttons */
+.form-control,
+.form-select,
+.btn {
+  margin-bottom: 15px; /* Space below each element */
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: #007bff; /* Primary button color */
+  border: none; /* No border */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Adjustments for mobile */
+@media (max-width: 768px) {
+  .main-form {
+    max-width: 44%; /* Allow full width on mobile */
+    margin: 30px ; /* Add margin on mobile */
+    position:relative;
+    left: 141px;
+    padding: 10px; /* Slightly reduced padding */
+    box-shadow: none; /* Optional: Remove shadow for cleaner look */
+  }
+
+  /* Full width for all input fields */
+  .form-control,
+  .form-select,
+  .btn {
+    width: 100%; /* Full width for all inputs and buttons */
+    box-sizing: border-box; /* Ensure padding does not affect width */
+  }
+}

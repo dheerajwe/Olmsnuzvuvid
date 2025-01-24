@@ -1,0 +1,138 @@
+.contact {
+  margin-left: 310px; /* Push section 310px from the left of the screen to accommodate sidebar */
+  margin-top: 20px; /* Add some space from the top */
+  padding: 0 15px; /* Ensure padding inside the container to prevent overflow */
+  box-sizing: border-box; /* Include padding within width calculation */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.contact .info-box,
+.contact .card {
+  background-color: #ffffff; /* White background color */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft gray shadow for better visibility */
+  min-height: 217px; /* Ensures all cards and the form have the same minimum height */
+  display: flex; /* Enable flex layout for consistent alignment */
+  flex-direction: column; /* Stack content vertically */
+  justify-content: space-between; /* Distribute space evenly */
+  padding: 28px 30px; /* Padding for consistency */
+}
+
+.contact .info-box {
+  margin-bottom: 20px; /* Space between boxes */
+}
+
+.contact .info-box i {
+  font-size: 38px;
+  line-height: 0;
+  color: #4154f1;
+}
+
+.contact .info-box h3 {
+  font-size: 20px;
+  color: #012970;
+  font-weight: 700;
+  margin: 20px 0 10px 0;
+}
+
+.contact .info-box p {
+  padding: 0;
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.contact .php-email-form {
+  display: flex; /* Enable flex layout for height alignment */
+  flex-direction: column; /* Stack form elements vertically */
+  height: 100%; /* Stretch form height to match parent container */
+}
+
+.contact .php-email-form .form-control {
+  border-radius: 4px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft gray shadow for inputs */
+  font-size: 14px;
+  margin-bottom: 15px; /* Space between fields */
+  border: 1px solid #ced4da; /* Border color similar to Bootstrap input borders */
+  padding: 10px 15px; /* Padding for input fields */
+}
+
+.contact .php-email-form .form-control:focus {
+  border-color: #4154f1;
+  box-shadow: 0 0 0 0.2rem rgba(66, 153, 225, 0.25); /* Add a focus shadow */
+}
+
+.contact .php-email-form textarea {
+  padding: 12px 15px; /* Padding for textarea */
+}
+
+.contact .php-email-form button[type=submit] {
+  background: #4154f1;
+  border: 0;
+  padding: 10px 30px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 4px;
+  cursor: pointer; /* Pointer cursor on hover */
+  align-self: center; /* Center the button */
+}
+
+.contact .php-email-form button[type=submit]:hover {
+  background: #5969f3;
+}
+
+.contact .php-email-form .error-message,
+.contact .php-email-form .sent-message,
+.contact .php-email-form .loading {
+  display: none;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.contact .php-email-form .error-message {
+  color: #fff;
+  background: #ed3c0d;
+  text-align: left;
+}
+
+.contact .php-email-form .sent-message {
+  color: #fff;
+  background: #18d26e;
+  text-align: center;
+}
+
+.contact .php-email-form .loading {
+  background: #fff;
+  text-align: center;
+}
+
+.contact .php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: #eee;
+  animation: animate-loading 1s linear infinite;
+}
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .contact .info-box,
+  .contact .card {
+    width: 100%; /* Full width on smaller screens */
+    min-height: auto; /* Allow height to adjust naturally */
+  }
+}

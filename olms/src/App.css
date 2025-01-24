@@ -1,0 +1,488 @@
+/* Ensure the body and html take full height */
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+/* Flex container for the entire app */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Content area takes up all available space */
+.main-content {
+  transition: all 0.4s ease;
+}
+
+/* Optional: Style the footer */
+.footer {
+  background-color: #f8f9fa;
+  padding: 20px;
+  text-align: center;
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+.header {
+  transition: all 0.5s;
+  z-index: 997;
+  height: 60px;
+  box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
+  background-color: #fff;
+  padding-left: 20px;
+}
+
+/* Logo styles */
+.logo {
+  line-height: 1;
+  text-decoration: none;
+  /* Ensure no text decoration is applied */
+}
+
+.logo img {
+  max-height: 26px;
+  margin-right: 6px;
+}
+
+.logo span {
+  font-size: 26px;
+  font-weight: 700;
+  color: #012970;
+  font-family: "Nunito", sans-serif;
+  text-decoration: none;
+  /* Explicitly remove underline */
+}
+
+/* Toggle Sidebar Button */
+
+.header .toggle-sidebar-btn {
+  font-size: 32px;
+  /* Adjust size as needed */
+  color: #012970;
+  /* Ensure color contrasts with background */
+  border: none;
+  /* Remove border if necessary */
+  background: none;
+  /* Remove default background */
+  cursor: pointer;
+  /* Pointer cursor for clickability */
+}
+
+/* Header Navigation */
+.header-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-nav .nav-icon {
+  font-size: 22px;
+  color: #012970;
+  margin-right: 25px;
+  position: relative;
+}
+
+.header-nav .nav-profile {
+  color: #012970;
+}
+
+.header-nav .nav-profile img {
+  max-height: 36px;
+}
+
+.header-nav .nav-profile span {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.header-nav .profile {
+  min-width: 240px;
+  padding-bottom: 0;
+  top: 8px !important;
+}
+
+.header-nav .profile .dropdown-header h6 {
+  font-size: 18px;
+  margin-bottom: 0;
+  font-weight: 600;
+  color: #444444;
+}
+
+.header-nav .profile .dropdown-header span {
+  font-size: 14px;
+}
+
+.header-nav .profile .dropdown-item {
+  font-size: 14px;
+  padding: 10px 15px;
+  transition: 0.3s;
+}
+
+.header-nav .profile .dropdown-item i {
+  margin-right: 10px;
+  font-size: 18px;
+  line-height: 0;
+}
+
+.header-nav .profile .dropdown-item:hover {
+  background-color: #f6f9ff;
+}
+
+/* Dropdown Menus */
+.dropdown-menu {
+  border-radius: 4px;
+  padding: 10px 0;
+  border: 0;
+  box-shadow: 0 5px 30px 0 rgba(82, 63, 105, 0.2);
+}
+
+.dropdown-menu .dropdown-header,
+.dropdown-menu .dropdown-footer {
+  text-align: center;
+  font-size: 15px;
+  padding: 10px 25px;
+}
+
+.dropdown-menu .dropdown-footer a {
+  color: #444444;
+  text-decoration: underline;
+}
+
+.dropdown-menu .dropdown-footer a:hover {
+  text-decoration: none;
+}
+
+.dropdown-menu .dropdown-divider {
+  color: #a5c5fe;
+  margin: 0;
+}
+
+.dropdown-menu .dropdown-item {
+  font-size: 14px;
+  padding: 10px 15px;
+  transition: 0.3s;
+}
+
+.dropdown-menu .dropdown-item i {
+  margin-right: 10px;
+  font-size: 18px;
+  line-height: 0;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #f6f9ff;
+}
+
+/* Responsive adjustments */
+@media (min-width: 1200px) {
+  .logo {
+    width: 280px;
+  }
+}
+
+/*SideBar*/
+/*SideBar*/
+
+.sidebar {
+  position: fixed;
+  top: 60px; /* This should match the height of your header */
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  z-index: 996; /* Ensure it's on top of other content */
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  padding: 20px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #aab7cf transparent;
+  box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
+  background-color: #fff;
+  transform: translateX(-100%); /* Initially hidden */
+}
+
+/* When sidebar is active, show it */
+.sidebar-active .sidebar {
+  transform: translateX(0); /* Bring sidebar into view */
+}
+
+/* Ensure main content does not shift when sidebar is active */
+.sidebar-active .main-content {
+  margin-left: 0; /* Do not shift main content */
+}
+
+/* Styles when sidebar is inactive */
+.sidebar-inactive .main-content {
+  margin-left: -300px; /* Optional adjustment */
+}
+
+.sidebar-inactive .sidebar {
+  transform: translateX(-100%); /* Keep sidebar hidden */
+}
+
+/* Optional collapsed state width */
+.sidebar.collapsed {
+  width: 80px; /* Optional: collapsed state width */
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px; /* Adjusted width for mobile */
+    transform: translateX(-100%); /* Hide sidebar off-screen initially */
+  }
+
+  /* Show sidebar when active */
+  .sidebar-active .sidebar {
+    transform: translateX(0); /* Bring sidebar into view when active */
+  }
+
+  /* Keep main content unaffected */
+  .sidebar-active .main-content {
+    margin-left: -300px; /* Do not shift main content */
+  }
+
+  /* Adjust for active sidebar in mobile view */
+  .sidebar-active .main-content {
+    transition: margin-left 0.4s; /* Smooth transition */
+  }
+}
+
+
+/* Scrollbar styles */
+.sidebar::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+  background-color: #fff;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #aab7cf;
+}
+
+@media (min-width: 1200px) {
+  #main,
+  #footer {
+    margin-left: 300px; /* Regular layout for larger screens */
+  }
+}
+
+@media (max-width: 1199px) {
+  .toggle-sidebar .sidebar {
+    left: 0; /* Sidebar position on toggle */
+  }
+}
+
+@media (min-width: 1200px) {
+  .toggle-sidebar #main,
+  .toggle-sidebar #footer {
+    margin-left: 0; /* Regular layout for larger screens */
+  }
+
+  .toggle-sidebar .sidebar {
+    left: -300px; /* Regular sidebar position */
+  }
+}
+
+
+.sidebar-nav {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sidebar-nav li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sidebar-nav .nav-item {
+  margin-bottom: 5px;
+}
+
+.sidebar-nav .nav-heading {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #899bbd;
+  font-weight: 600;
+  margin: 10px 0 5px 15px;
+}
+
+.sidebar-nav .nav-link {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: #012970;
+  /* Default color */
+  background: #fff;
+  /* Default background */
+  transition: background 0.3s, color 0.3s;
+  padding: 10px 15px;
+  border-radius: 4px;
+}
+
+.sidebar-nav .nav-link i {
+  font-size: 16px;
+  margin-right: 10px;
+  color: #012970;
+}
+
+.sidebar-nav .nav-link.collapsed {
+  color: #012970;
+  background: #fff;
+}
+
+.sidebar-nav .nav-link.collapsed i {
+  color: #899bbd;
+}
+
+/* Hover and active state styling */
+.sidebar-nav .nav-link:hover,
+.sidebar-nav .nav-link.active {
+  color: #4154f1;
+  /* Color on hover or active */
+  background: #f6f9ff;
+  /* Background on hover or active */
+}
+
+.sidebar-nav .nav-link:hover i {
+  color: #4154f1;
+}
+
+.sidebar-nav .nav-link .bi-chevron-down {
+  margin-right: 0;
+  transition: transform 0.2s ease-in-out;
+}
+
+.sidebar-nav .nav-link:not(.collapsed) .bi-chevron-down {
+  transform: rotate(180deg);
+}
+
+.sidebar-nav .nav-content {
+  padding: 5px 0 0 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* Sidebar Navigation Content Links */
+.sidebar-nav .nav-content a {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #012970;
+  padding: 10px 0 10px 40px;
+  text-decoration: none;
+  /* Remove underline */
+  transition: 0.3s;
+}
+
+.sidebar-nav .nav-content a:hover,
+.sidebar-nav .nav-content a.active {
+  color: #4154f1;
+  text-decoration: none;
+  /* Ensure underline is not added on hover */
+}
+
+.sidebar-nav .nav-content a.active i {
+  background-color: #4154f1;
+}
+
+.sidebar-nav .nav-content a i {
+  font-size: 6px;
+  margin-right: 8px;
+  line-height: 0;
+  border-radius: 50%;
+}
+
+.sidebar-nav .nav-content a:hover,
+.sidebar-nav .nav-content a.active {
+  color: #4154f1;
+}
+
+.sidebar-nav .nav-content a.active i {
+  background-color: #4154f1;
+}
+
+/*page title*/
+
+/* Breadcrumb styles */
+.pagetitle {
+  padding: 20px;
+  /* background-color: #f1f1f1; */
+  /* border-bottom: 1px solid #ddd; */
+  margin-top: 60px;
+  /* Ensure it is below the header */
+  margin-left: 300px;
+  /* Ensure it is to the right of the sidebar */
+}
+
+.pagetitle h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.pagetitle nav {
+  margin-top: 10px;
+}
+
+.pagetitle .breadcrumb {
+  background: none;
+  /* Remove any background color */
+  padding: 0;
+  /* Remove padding */
+  margin: 0;
+  /* Remove margin */
+  list-style: none;
+  /* Remove default list styling */
+}
+
+.pagetitle .breadcrumb-item+.breadcrumb-item::before {
+  content: '/';
+  color: #6c757d;
+  /* Separator color */
+}
+
+.pagetitle .breadcrumb-item a {
+  color: #007bff;
+  /* Link color */
+  text-decoration: none;
+  /* Remove underline */
+}
+
+.pagetitle .breadcrumb-item a:hover {
+  text-decoration: underline;
+  /* Add underline on hover */
+}
+/* Global scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  display: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #9966cc;
+  border-radius: 10px;
+  display: none;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  display: none;
+}
+
+
+/* Global CSS */
+html {
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Edge */
+}

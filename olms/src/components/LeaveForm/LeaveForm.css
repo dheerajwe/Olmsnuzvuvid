@@ -1,0 +1,48 @@
+.main-form {
+  max-width: 500px;
+  /* Adjust width as needed */
+  margin: 10px auto;
+  /* 10px top margin and auto horizontal margins */
+  padding: 20px;
+  background-color: #ffffff;
+  /* White background color */
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Soft gray shadow for better visibility */
+
+
+  /* Move 20px to the right (adjust as needed) */
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.form-control,
+.form-select,
+.btn {
+  margin-bottom: 15px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Soft gray shadow for button */
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  /* Slightly darker gray shadow on hover */
+}
+@media (max-width: 768px) {
+  .main-form {
+    max-width: 44%; /* Allow full width on mobile */
+    margin: 30px ; /* Add margin on mobile */
+    position:relative;
+    left: 141px;
+    padding: 10px; /* Slightly reduced padding */
+    box-shadow: none; /* Optional: Remove shadow for cleaner look */
+  }
+}

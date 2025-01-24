@@ -1,0 +1,14 @@
+.footer {
+  background-color: #f8f9fa;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer .copyright {
+  font-size: 14px;
+}
+
+.footer .copyright strong span {
+  font-weight: bold;
+}
