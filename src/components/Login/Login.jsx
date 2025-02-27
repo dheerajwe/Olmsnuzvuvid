@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Login.css";
 
 const Login = ({ setToken }) => {
-  const [activeTab, setActiveTab] = useState("ADSW");
+  const [activeTab, setActiveTab] = useState("STUDENT");
   const [isVisible, setIsVisible] = useState(true);
 
   const tabs = ["Student"];
