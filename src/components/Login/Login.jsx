@@ -5,7 +5,7 @@ const Login = ({ setToken }) => {
   const [activeTab, setActiveTab] = useState("ADSW");
   const [isVisible, setIsVisible] = useState(true);
 
-  const tabs = ["Care Taker", "Warden", "ADSW", "DSW"];
+  const tabs = ["Student"];
 
   const handleTabChange = (tab) => {
     setIsVisible(false); // Start hiding
